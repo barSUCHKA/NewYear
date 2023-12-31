@@ -107,11 +107,11 @@
         return Math.floor(Math.random() * (max - min + 1)) + min;
       }
 
-      const count = 1000;
+      const count = 700;
       const snow = document.querySelector(".snow");
 
       for (let i = 0; i < count; i++) {
-        const left = getRandomInRage(-200, 1980);
+        const left = getRandomInRage(-100, 1000);
         const time = getRandomInRage(30, 90);
         const delay = getRandomInRage(0, 30);
         const move = getRandomInRage(1, 3);
