@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy New Year</title>
+  </head>
+  <body>
+    <div class="back">
+      <ul class="lightrope">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="snow">
+        <p class="p1">
+          С наступающим тебя<br />
+          Новым, 2024 Годом!!!
+        </p>
+        <p class="m1"></p>
+        <p class="p2">
+          Самых ярких впечатлений,<br />
+          Самых сказочных мгновений.<br />
+          Пусть Вам этот год несет<br />
+          Много радостных хлопот!<br />
+        </p>
+        <p class="m2"></p>
+        <p class="p3">
+          С Новым годом! Волшебства,<br />
+          Смеха, счастья и тепла,<br />
+          Мира, радостей, достатка<br />
+          И во всех делах порядка!<br />
+        </p>
+        <p class="m3"></p>
+        <p class="p4">
+          Пусть все серое, плохое<br />
+          Старый год возьмет с собою.<br />
+          Впредь лишь светлые мгновенья<br />
+          Создают пусть настроенье!<br />
+        </p>
+        <p class="m4"></p>
+        <p class="p5">
+          Желаю в этот Новый год<br />
+          Поменьше грусти и забот,<br />
+          Побольше счастья и добра,<br />
+          Улыбок, нежности, тепла!<br />
+        </p>
+        <p class="m5"></p>
+        <p class="p6">
+          Чтоб были верными друзья<br />
+          И очень дружною семья,<br />
+          Чтоб каждый день удачным был,<br />
+          И чтоб на всё хватало сил!<br />
+        </p>
+        <p class="m6"></p>
+        <p class="p7">
+          Ну а ещё пусть Новый год<br />
+          Побольше денег принесёт,<br />
+          Здоровья, мира и любви,<br />
+          Чтоб в сердце не было зимы!<br />
+        </p>
+        <p class="m7"></p>
+      </div>
+    </div>
+
+    <script>
+      function getRandomInRage(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      const count = 1000;
+      const snow = document.querySelector(".snow");
+
+      for (let i = 0; i < count; i++) {
+        const left = getRandomInRage(-200, 1980);
+        const time = getRandomInRage(30, 90);
+        const delay = getRandomInRage(0, 30);
+        const move = getRandomInRage(1, 3);
+        const opacity = getRandomInRage(3, 10);
+
+        snow.insertAdjacentHTML(
+          "beforeend",
+          `
+  <div class="item" style="left: ${left}px;
+  animation-delay: ${delay}s;
+  animation-duration: ${time}s;
+  animation-name: move${move};
+  opacity: ${opacity / 10};
+  ">
+  </div>
+  `
+        );
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        background-image: url(https://i.pinimg.com/736x/2f/a8/3c/2fa83cc63e877051e90c736b01c8a27a--christmas-pattern-background-patterns-background.jpg);
+        flex-direction: column;
+        overflow-x: hidden;
+      }
+
+      .snow {
+        top: -7px;
+        width: 100vw;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .item {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        background: #fff;
+        border-radius: 50%;
+        filter: drop-shadow(0 0 15px white);
+        animation-name: move1;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes move1 {
+        0% {
+          top: 0%;
+          transform: translateX(0);
+        }
+        100% {
+          top: 100%;
+          transform: translateX(100px);
+        }
+      }
+      @keyframes move2 {
+        0% {
+          top: 0%;
+          transform: translateX(0);
+        }
+        100% {
+          top: 100%;
+          transform: translateX(150px);
+        }
+      }
+      @keyframes move3 {
+        0% {
+          top: 0%;
+          transform: translateX(0);
+        }
+        100% {
+          top: 100%;
+          transform: translateX(200px);
+        }
+      }
+
+      .back {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100vw;
+        height: 100%;
+      }
+
+      .p1 {
+        font-size: 36px;
+        color: violet;
+        text-align: center;
+      }
+
+      .p2 {
+        font-style: italic;
+        font-size: 20px;
+        color: rgb(9, 255, 0);
+        margin: 11% 0 11% 11%;
+      }
+
+      .m1 {
+        background-image: url(https://avatars.mds.yandex.net/i?id=84f6c891b2ad06575da51d062b071b963fbd5ce3-9240642-images-thumbs&ref=rim&n=33&w=200&h=200);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        border-radius: 15px;
+        filter: drop-shadow(0 0 15px violet);
+      }
+
+      .p3 {
+        font-style: italic;
+        font-size: 20px;
+        color: rgb(0, 225, 255);
+        margin: 11% 0 11% 11%;
+      }
+
+      .m2 {
+        background-image: url(https://distribution.faceit-cdn.net/images/f5cf2109-bca0-4e78-b304-c44006b2ddc2.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        border-radius: 15px;
+        filter: drop-shadow(0 0 15px rgb(9, 255, 0));
+      }
+
+      .p4 {
+        font-style: italic;
+        font-size: 20px;
+        color: rgb(255, 0, 0);
+        margin: 11% 0 11% 11%;
+      }
+
+      .m3 {
+        background-image: url(https://mdk.red/i/8e2253b4-6fdc-4df2-a472-a231a1b98b39/p.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        border-radius: 15px;
+        filter: drop-shadow(0 0 15px rgb(0, 225, 255));
+      }
+
+      .p5 {
+        font-style: italic;
+        font-size: 20px;
+        color: rgb(255, 0, 255);
+        margin: 11% 0 11% 11%;
+      }
+
+      .m4 {
+        background-image: url(https://cdn.fastcup.net/avatars/users/440793_7n576n0o7.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        border-radius: 15px;
+        filter: drop-shadow(0 0 15px rgb(255, 0, 0));
+      }
+
+      .p6 {
+        font-style: italic;
+        font-size: 20px;
+        color: rgb(229, 255, 0);
+        margin: 11% 0 11% 11%;
+      }
+
+      .m5 {
+        background-image: url(https://prazdnik24.online/wp-content/uploads/2021/12/prikolnye-s-novym-godom-5-300x300.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        border-radius: 15px;
+        filter: drop-shadow(0 0 15px rgb(255, 0, 255));
+      }
+
+      .p7 {
+        font-style: italic;
+        font-size: 20px;
+        color: rgb(0, 225, 255);
+        margin: 11% 0 11% 11%;
+      }
+
+      .m6 {
+        background-image: url(https://zm-cs.ru/files/avatars/1577788378.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        border-radius: 15px;
+        filter: drop-shadow(0 0 15px rgb(229, 255, 0));
+      }
+
+      .p8 {
+        font-style: italic;
+        font-size: 20px;
+        color: rgb(255, 145, 0);
+        margin: 11% 0 11% 11%;
+      }
+
+      .m7 {
+        background-image: url(https://sun9-26.userapi.com/s/v1/ig2/2_hLQDuBnPELAIjOdt6KX8EBW9MDRL1K9AE_fGvyYc7EcAHEUSWpwoaF2uEHJA_GCGt6ls8fyrnuugAUVnW6XaHN.jpg?size=200x200&quality=95&crop=0,5,1074,1074&ava=1);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        border-radius: 15px;
+        filter: drop-shadow(0 0 15px rgb(0, 225, 255));
+      }
+
+      .lightrope {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        position: absolute;
+        z-index: 1;
+        margin: -15px 0 0 0;
+        padding: 0;
+        pointer-events: none;
+        width: 100%;
+      }
+
+      .lightrope li {
+        position: relative;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+        width: 12px;
+        height: 28px;
+        border-radius: 50%;
+        margin: 20px;
+        display: inline-block;
+        background: #00f7a5;
+        box-shadow: 0px 4.66667px 24px 3px #00f7a5;
+        -webkit-animation-name: flash-1;
+        animation-name: flash-1;
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+      }
+
+      .lightrope li:nth-child(2n + 1) {
+        background: cyan;
+        box-shadow: 0px 4.66667px 24px 3px rgba(0, 255, 255, 0.5);
+        -webkit-animation-name: flash-2;
+        animation-name: flash-2;
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.4s;
+      }
+
+      .lightrope li:nth-child(4n + 2) {
+        background: #f70094;
+        box-shadow: 0px 4.66667px 24px 3px #f70094;
+        -webkit-animation-name: flash-3;
+        animation-name: flash-3;
+        -webkit-animation-duration: 1.1s;
+        animation-duration: 1.1s;
+      }
+
+      .lightrope li:nth-child(odd) {
+        -webkit-animation-duration: 1.8s;
+        animation-duration: 1.8s;
+      }
+
+      .lightrope li:nth-child(3n + 1) {
+        -webkit-animation-duration: 1.4s;
+        animation-duration: 1.4s;
+      }
+
+      .lightrope li:before {
+        content: "";
+        position: absolute;
+        background: #222;
+        width: 10px;
+        height: 9.33333px;
+        border-radius: 3px;
+        top: -4.66667px;
+        left: 1px;
+      }
+
+      .lightrope li:after {
+        content: "";
+        top: -14px;
+        left: 9px;
+        position: absolute;
+        width: 52px;
+        height: 18.66667px;
+        border-bottom: solid #222 2px;
+        border-radius: 50%;
+      }
+
+      .lightrope li:last-child:after {
+        content: none;
+      }
+
+      .lightrope li:first-child {
+        margin-left: -40px;
+      }
+
+      @-webkit-keyframes flash-1 {
+        0%,
+        100% {
+          background: #00f7a5;
+          box-shadow: 0px 4.66667px 24px 3px #00f7a5;
+        }
+        50% {
+          background: rgba(0, 247, 165, 0.4);
+          box-shadow: 0px 4.66667px 24px 3px rgba(0, 247, 165, 0.2);
+        }
+      }
+
+      @keyframes flash-1 {
+        0%,
+        100% {
+          background: #00f7a5;
+          box-shadow: 0px 4.66667px 24px 3px #00f7a5;
+        }
+        50% {
+          background: rgba(0, 247, 165, 0.4);
+          box-shadow: 0px 4.66667px 24px 3px rgba(0, 247, 165, 0.2);
+        }
+      }
+
+      @-webkit-keyframes flash-2 {
+        0%,
+        100% {
+          background: cyan;
+          box-shadow: 0px 4.66667px 24px 3px cyan;
+        }
+        50% {
+          background: rgba(0, 255, 255, 0.4);
+          box-shadow: 0px 4.66667px 24px 3px rgba(0, 255, 255, 0.2);
+        }
+      }
+
+      @keyframes flash-2 {
+        0%,
+        100% {
+          background: cyan;
+          box-shadow: 0px 4.66667px 24px 3px cyan;
+        }
+        50% {
+          background: rgba(0, 255, 255, 0.4);
+          box-shadow: 0px 4.66667px 24px 3px rgba(0, 255, 255, 0.2);
+        }
+      }
+
+      @-webkit-keyframes flash-3 {
+        0%,
+        100% {
+          background: #f70094;
+          box-shadow: 0px 4.66667px 24px 3px #f70094;
+        }
+        50% {
+          background: rgba(247, 0, 148, 0.4);
+          box-shadow: 0px 4.66667px 24px 3px rgba(247, 0, 148, 0.2);
+        }
+      }
+
+      @keyframes flash-3 {
+        0%,
+        100% {
+          background: #f70094;
+          box-shadow: 0px 4.66667px 24px 3px #f70094;
+        }
+        50% {
+          background: rgba(247, 0, 148, 0.4);
+          box-shadow: 0px 4.66667px 24px 3px rgba(247, 0, 148, 0.2);
+        }
+      }
+    </style>
+  </body>
+</html>
